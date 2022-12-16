@@ -1,2 +1,2 @@
 #!/bin/sh
-paru -Qqet > .paks
+paru -Qqet > ~/.paks
