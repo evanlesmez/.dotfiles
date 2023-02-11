@@ -4,6 +4,5 @@ if status is-interactive
 	and not set -q TMUX		
 	exec tmux
 end
-
-
+alias dotfgit='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'alias dotfgit
 starship init fish | source
