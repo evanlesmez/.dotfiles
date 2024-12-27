@@ -1,3 +1,4 @@
 #!/bin/sh
-paru -Qqet > ~/.pkglist.txt
+paru -Qqet > ~/.aur-packages.txt
+pacman -Qqen > ~/.pacman-packages.txt
 
