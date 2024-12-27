@@ -17,6 +17,10 @@ PS1='[\u@\h \W]\$ '
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
 
+alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
+source /usr/share/bash-completion/completions/git
+__git_complete dotfiles __git_main
+
 source /usr/share/nvm/init-nvm.sh
 
 eval "$(starship init bash)"
