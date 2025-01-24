@@ -4,10 +4,10 @@ set -euo pipefail
 # set -x
 dur=${1:-30m}
 
-echo "$dur interval timer started at $(date +%H:%M:%S)"
+notify-send "$dur interval timer started at $(date +%H:%M:%S)"
 
 while true; do
     sleep $dur
-    notify-send "$dur interval done" "Write down what you did and how content you feel. Also drink some water"
+    notify-send -w "$dur interval done" "Write down what you did and how content you feel. Also drink some water"
 done
 
