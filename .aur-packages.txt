@@ -11,9 +11,13 @@ blender
 blueman
 bluez-tools
 bluez-utils
+c-client
+c-client-debug
+caffeine-ng
 cpupower
 discord
 docker
+dunst
 fd
 firefox
 flamegraph
@@ -86,7 +90,7 @@ vlc
 vulkan-tools
 watchexec
 wget
-wireshark-cli
+wireshark-qt
 xarchiver
 xdebug
 xorg-xev
