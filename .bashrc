@@ -24,3 +24,12 @@ __git_complete dotfiles __git_main
 source /usr/share/nvm/init-nvm.sh
 
 eval "$(starship init bash)"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+export PATH=/opt/cuda/bin:$PATH
+export LD_LIBRARY_PATH=/opt/cuda/lib64:$LD_LIBRARY_PATH
+
+. "/home/evylz/.deno/env"
