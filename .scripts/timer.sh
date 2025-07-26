@@ -5,6 +5,7 @@ set -euo pipefail
 dur=${1:-25m}
 
 echo "$dur timer started at $(date +%H:%M:%S)"
+notify-send "$dur timer started at $(date +%H:%M:%S)"
 sleep "$dur"
-notify-send "Stand up"
-mpg123 --scale 12500 ~/.scripts/assets/mw2-lvl.mp3
+mpv --no-terminal ~/.scripts/assets/mw2-lvl.mp3
+notify-send -w "Stand up"
