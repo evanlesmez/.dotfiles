@@ -2,7 +2,7 @@
 set -euo pipefail
 # for debugging
 # set -x
-dur=${1:-25m}
+dur=${1:-90m}
 
 echo "$dur timer started at $(date +%H:%M:%S)"
 notify-send "$dur timer started at $(date +%H:%M:%S)"

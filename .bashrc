@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 
 export EDITOR=nvim
-export BROWSER=/usr/bin/firefox
+export BROWSER=/usr/bin/chromium
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
@@ -22,5 +22,15 @@ source /usr/share/bash-completion/completions/git
 __git_complete dotfiles __git_main
 
 source /usr/share/nvm/init-nvm.sh
+
+alias composer='/usr/bin/php82 /usr/local/bin/composer'
+alias wp='php82 /usr/local/bin/wp'
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+. "/home/evylz/.deno/env"
+. "$HOME/.local/bin/env"
+export PATH=$PATH:/usr/local/go/bin
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 eval "$(starship init bash)"
