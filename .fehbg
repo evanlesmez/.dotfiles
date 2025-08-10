@@ -1,4 +1,3 @@
 #!/bin/sh
-feh --no-fehbg --bg-fill '/home/evylz/Pictures/Backgrounds/kid-luffy.jpg' '/home/evylz/Pictures/Backgrounds/anime-mountains.jpg'
-
+feh --no-fehbg --bg-fill '/home/evylz/Pictures/Backgrounds/jolly-rogers.jpg'
 # read !ls ~/Pictures/Backgrounds
