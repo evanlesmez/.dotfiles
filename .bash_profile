@@ -3,5 +3,3 @@
 #
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
-. "/home/evylz/.deno/env"
-. "$HOME/.local/bin/env"

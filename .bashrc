@@ -28,18 +28,13 @@ alias wp='php82 /usr/local/bin/wp'
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-. "/home/evylz/.deno/env"
-. "$HOME/.local/bin/env"
+
 export PATH=$PATH:/usr/local/go/bin
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
-eval "$(starship init bash)"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
 
 export PATH=/opt/cuda/bin:$PATH
 export LD_LIBRARY_PATH=/opt/cuda/lib64:$LD_LIBRARY_PATH
-
 . "/home/evylz/.deno/env"
+
+eval "$(starship init bash)"
