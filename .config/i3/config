@@ -208,9 +208,8 @@ bar {
 
 for_window [window_role="pop-up"]                       floating enable
 
-gaps inner 5
+gaps inner 10
 gaps outer 5
 
-exec_always xrandr --output DP-0 --mode 1920x1080 -r 239 --below HDMI-0
-exec_always xrandr --output HDMI-0 --mode 1920x1080 -r 100 -below HDMI-0
-exec_always  picom --backend glx
+exec ~/.scripts/set-ttchoppa-xdisplays.sh
+exec_always picom --backend glx --vsync --use-damage --glx-no-stencil &
