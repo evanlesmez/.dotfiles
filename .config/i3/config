@@ -211,5 +211,7 @@ for_window [window_role="pop-up"]                       floating enable
 gaps inner 10
 gaps outer 5
 
+exec --no-startup-id setxkbmap -option caps:escape
 exec ~/.scripts/set-ttchoppa-xdisplays.sh
-exec_always picom --backend glx --vsync --use-damage --glx-no-stencil &
+exec_always --no-startup-id ~/.random-fehbg ~/Pictures/Backgrounds/
+exec_always --no-startup-id picom

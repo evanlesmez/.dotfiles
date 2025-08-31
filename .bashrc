@@ -30,5 +30,5 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export PATH=/opt/cuda/bin:$PATH
 export LD_LIBRARY_PATH=/opt/cuda/lib64:$LD_LIBRARY_PATH
 . "/home/evylz/.deno/env"
-
+alias i3lock='i3lock --nofork -c 000000'
 eval "$(starship init bash)"

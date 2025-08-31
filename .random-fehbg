@@ -1,0 +1,54 @@
+#!/bin/sh
+
+# Exit on error, undefined variables, and pipe failures
+set -euo pipefail
+
+# Function to display usage
+usage() {
+    echo "Usage: $0 <wallpaper_directory>"
+    echo "  Sets a random wallpaper from the specified directory"
+    echo "  Supports .jpg, .jpeg, and .png files"
+    exit 1
+}
+
+# Check if directory argument is provided
+if [[ $# -ne 1 ]]; then
+    echo "Error: Please specify a wallpaper directory"
+    usage
+fi
+
+WALLPAPER_DIR="$1"
+
+# Check if directory exists and is readable
+if [[ ! -d "$WALLPAPER_DIR" ]]; then
+    echo "Error: Directory '$WALLPAPER_DIR' does not exist"
+    exit 1
+fi
+
+if [[ ! -r "$WALLPAPER_DIR" ]]; then
+    echo "Error: Directory '$WALLPAPER_DIR' is not readable"
+    exit 1
+fi
+
+# Find all image files (case insensitive)
+mapfile -t wallpapers < <(find "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) 2>/dev/null)
+
+# Check if any wallpapers were found
+if [[ ${#wallpapers[@]} -eq 0 ]]; then
+    echo "Error: No .jpg, .jpeg, or .png files found in '$WALLPAPER_DIR'"
+    exit 1
+fi
+
+# Get random wallpaper
+random_index=$((RANDOM % ${#wallpapers[@]}))
+selected_wallpaper="${wallpapers[$random_index]}"
+
+echo "Found ${#wallpapers[@]} wallpaper(s)"
+echo "Setting wallpaper: $(basename "$selected_wallpaper")"
+
+# Set wallpaper with feh
+# --bg-fill fills the screen (may crop image to fit)
+# --no-fehbg prevents feh from creating ~/.fehbg (since this script replaces it)
+feh --no-fehbg --bg-fill "$selected_wallpaper"
+
+echo "Wallpaper set successfully!"
