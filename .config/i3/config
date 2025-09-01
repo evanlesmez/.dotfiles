@@ -211,10 +211,11 @@ for_window [window_role="pop-up"]                       floating enable
 gaps inner 10
 gaps outer 5
 
-exec --no-startup-id setxkbmap -option caps:ctrl
 # Launch browser
 bindsym $mod+b exec chromium
 exec ~/.scripts/set-ttchoppa-xdisplays.sh
 exec_always --no-startup-id ~/.random-fehbg ~/Pictures/Backgrounds/
 exec_always --no-startup-id picom
+exec_always --no-startup-id setxkbmap -option
+exec_always --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id ~/.scripts/set-mouse-flat-accel.sh
