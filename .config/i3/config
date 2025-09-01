@@ -217,4 +217,4 @@ bindsym $mod+b exec chromium
 exec ~/.scripts/set-ttchoppa-xdisplays.sh
 exec_always --no-startup-id ~/.random-fehbg ~/Pictures/Backgrounds/
 exec_always --no-startup-id picom
-exec_always --no-startup-id ~/.scripts/set-mouse-flat-accel.sh
+exec --no-startup-id ~/.scripts/set-mouse-flat-accel.sh
