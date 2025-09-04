@@ -212,9 +212,9 @@ gaps inner 10
 gaps outer 5
 
 # Launch browser
-bindsym $mod+b exec chromium
-exec_always --no-startup-id setxkbmap -option
+bindsym $mod+b exec --no-startup-id chromium
 exec_always --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id ~/.scripts/set-mouse-flat-accel.sh
-exec_always --no-startup-id ~/.random-fehbg ~/Pictures/Backgrounds/
+exec_always --no-startup-id ~/.myfehbg
+# exec_always --no-startup-id ~/.random-fehbg ~/Pictures/Backgrounds/
 exec_always --no-startup-id picom
