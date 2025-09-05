@@ -197,10 +197,15 @@ bindsym $mod+r mode "resize"
 
 # --- custom ---
 bindsym $mod+Shift+o move workspace to output up 
+
+# Flip dvorak or qwerty
+bindsym $mod+Shift+grave exec --no-startup-id setxkbmap -query | grep -q dvorak && setxkbmap us || setxkbmap us -variant dvorak
+
+# Launch browser
+bindsym $mod+b exec --no-startup-id chromium
 # --------------
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+# Start i3bar to display a workspace bar (plus the system information i3status finds out, if available)
 bar {
         i3bar_command i3bar --transparency
         status_command i3status
@@ -211,8 +216,6 @@ for_window [window_role="pop-up"]                       floating enable
 gaps inner 10
 gaps outer 5
 
-# Launch browser
-bindsym $mod+b exec --no-startup-id chromium
 exec_always --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id ~/.scripts/set-mouse-flat-accel.sh
 exec_always --no-startup-id ~/.myfehbg
