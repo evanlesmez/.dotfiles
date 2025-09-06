@@ -221,6 +221,8 @@ exec --no-startup-id udiskie --tray
 
 exec_always --no-startup-id setxkbmap -option ctrl:nocaps
 exec --no-startup-id ~/.scripts/set-mouse-flat-accel.sh
-exec_always --no-startup-id ~/.myfehbg
-# exec_always --no-startup-id ~/.random-fehbg ~/Pictures/Backgrounds/
+
+# choose between specic bg or random
+# exec_always --no-startup-id ~/.myfehbg
+exec_always --no-startup-id ~/.random-fehbg ~/Pictures/Backgrounds/
 exec_always --no-startup-id picom
