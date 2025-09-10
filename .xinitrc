@@ -35,7 +35,7 @@ fi
 # needed to make higher refresh rate monitor used for VRR (vsync) rather than lowest one
 # set here is better than in .bashrc because menu launched apps don't see bashrc env
 export __GL_SYNC_DISPLAY_DEVICE="DP-0"
-
+setxkbmap real-prog-dvorak -option ctrl:nocaps
 # setup screens. Putting this in i3 config causes weird glitch with background being distorted by picom on my higher end monitor
 ~/.scripts/set-ttchoppa-xdisplays.sh
 # launch i3wm
