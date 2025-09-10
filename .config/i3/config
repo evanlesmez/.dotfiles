@@ -198,7 +198,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Shift+o move workspace to output up 
 
 # Flip dvorak or qwerty
-bindsym $mod+Shift+grave exec --no-startup-id setxkbmap -query | grep -q dvorak && setxkbmap us -option ctrl:nocaps || setxkbmap real-prog-dvorak -option ctrl:nocaps 
+bindsym $mod+Shift+m exec --no-startup-id setxkbmap -query | grep -q dvorak && setxkbmap us -option ctrl:nocaps || setxkbmap real-prog-dvorak -option ctrl:nocaps
 
 # Launch browser
 bindsym $mod+b exec --no-startup-id chromium
