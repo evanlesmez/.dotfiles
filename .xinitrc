@@ -37,6 +37,8 @@ fi
 export __GL_SYNC_DISPLAY_DEVICE="DP-0"
 
 # setup screens. Putting this in i3 config causes weird glitch with background being distorted by picom on my higher end monitor
-~/.scripts/set-ttchoppa-xdisplays.sh
+
+~/.scripts/set-ser5-xdisplays.sh
+
 # launch i3wm
 exec i3
