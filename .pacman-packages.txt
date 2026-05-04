@@ -12,9 +12,6 @@ audacity
 base
 base-devel
 bash-completion
-base
-base-devel
-bash-completion
 bcachefs-tools
 bind
 bitwarden
@@ -24,9 +21,6 @@ bluez-tools
 bluez-utils
 btrfs-progs
 cpupower
-csvkit
-dbeaver
-discord
 dmenu
 docker
 dosfstools
@@ -36,12 +30,10 @@ exfatprogs
 fakeroot
 fd
 feh
-firefox
 flameshot
 gd
 gimp
 git
-godot
 graphviz
 grub
 htop
@@ -50,7 +42,6 @@ i3blocks
 i3lock
 i3status
 inkscape
-intel-ucode
 irssi
 jq
 kdenlive
