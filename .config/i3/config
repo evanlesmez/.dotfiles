@@ -209,17 +209,16 @@ bar {
     font pango:Hack Nerd Font Mono 11
     status_command i3status-rs
     separator_symbol "  "
-    tray_output none
 
     colors {
         background #000000CC
-        statusline #cdd6f4
+        statusline #f5f5f5
         separator  #00000000
 
-        focused_workspace  #89b4fa00 #89b4faCC #1e1e2e
-        active_workspace   #31324400 #313244CC #cdd6f4
-        inactive_workspace #00000000 #00000000 #6c7086
-        urgent_workspace   #f38ba800 #f38ba8CC #1e1e2e
+        focused_workspace  #d7000000 #d7000033 #f5f5f5
+        active_workspace   #88000000 #88000022 #f5f5f5
+        inactive_workspace #00000000 #00000000 #888888
+        urgent_workspace   #ffaf0000 #ffaf00CC #000000
     }
 }
 

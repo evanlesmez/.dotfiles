@@ -1,5 +1,8 @@
 [theme]
-theme = "ctp-mocha"
+theme = "bad-wolf"
+[theme.overrides]
+idle_bg = "#00000000"
+separator_bg = "#00000000"
 
 [icons]
 icons = "material-nf"
@@ -38,7 +41,7 @@ format = " $icon $utilization "
 
 [[block]]
 block = "memory"
-format = " $icon $mem_used_percents "
+format = " $icon $mem_used.eng(prefix:Gi) "
 
 [[block]]
 block = "time"
