@@ -32,13 +32,6 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-# Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
 set $up k
@@ -168,6 +161,16 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
+# Brightness
+bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+
+# Volume (PipeWire / wpctl)
+bindsym XF86AudioRaiseVolume  exec --no-startup-id wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+
+bindsym XF86AudioLowerVolume  exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym XF86AudioMute         exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym XF86AudioMicMute      exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -198,26 +201,39 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Shift+o move workspace to output up 
 
 # Flip dvorak or qwerty
-bindsym $mod+Shift+m exec --no-startup-id setxkbmap -query | grep -q dvorak && setxkbmap us -option ctrl:nocaps || setxkbmap us -variant real-prog-dvorak -option ctrl:nocaps
+bindsym $mod+Shift+m exec --no-startup-id sh -c 'setxkbmap -query | grep -q dvorak && setxkbmap us -option "" -option caps:escape || setxkbmap us -variant dvorak -option "" -option caps:escape'
 bindsym $mod+b exec --no-startup-id chromium
 
 # Start i3bar to display a workspace bar (plus the systkem information i3statusfinds out, if available)
 bar {
-        i3bar_command i3bar --transparency
-        status_command i3status
+    font pango:Hack Nerd Font Mono 11
+    status_command i3status-rs
+    separator_symbol "  "
+    tray_output none
+
+    colors {
+        background #000000CC
+        statusline #cdd6f4
+        separator  #00000000
+
+        focused_workspace  #89b4fa00 #89b4faCC #1e1e2e
+        active_workspace   #31324400 #313244CC #cdd6f4
+        inactive_workspace #00000000 #00000000 #6c7086
+        urgent_workspace   #f38ba800 #f38ba8CC #1e1e2e
+    }
 }
 
 for_window [window_role="pop-up"]                       floating enable
 
-gaps inner 10
-gaps outer 5
+gaps inner 20
+gaps outer 10
 
 # For auto mounting USBs
 exec --no-startup-id udiskie --tray
 
 exec --no-startup-id ~/.scripts/set-mouse-flat-accel.sh
 
-# choose between specic bg or random
+# choose between specific bg or random
 # exec_always --no-startup-id ~/.myfehbg
 exec_always --no-startup-id ~/.random-fehbg ~/Pictures/Backgrounds/
 exec_always --no-startup-id picom
