@@ -1,32 +1,27 @@
 [window]
-opacity = 0.90
+opacity = 0.975
 startup_mode = "Maximized"
 decorations = "None"
+resize_increments = true
+# i3 tiling can't size the window to a whole number of cells, so ~23px is always
+# left over; spread it evenly top/bottom instead of piling it under the tmux bar
+dynamic_padding = true
+
+[window.padding]
+x = 4
+y = 0
 
 [font]
-size=14.0
+size=11.0
 
 [font.normal]
-family = "Hack Nerd Font"
+family = "IoskeleyMonoTerm Nerd Font"
 style = "Regular"
-
-[font.bold]
-family = "Hack Nerd Font"
-style = "Bold"
-
-[font.italic]
-family = "Hack Nerd Font"
-style = "Italic"
-
-[font.bold_italic]
-family = "Hack Nerd Font"
-style = "Bold Italic"
 
 [general]
 import = [
-  "~/.config/alacritty/themes/themes/tomorrow_night_bright.toml"
+  "~/.config/alacritty/themes/themes/tokyo_night_storm.toml"
 ]
-
 
 [[keyboard.bindings]]
 key = "Return"

@@ -162,3 +162,10 @@ symbol = " "
 
 [zig]
 symbol = " "
+
+[git_status]
+deleted = ""
+
+[gcloud]
+disabled = true
+format = '[$symbol$account]($style) '
