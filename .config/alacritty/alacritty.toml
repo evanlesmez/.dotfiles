@@ -1,5 +1,5 @@
 [window]
-opacity = 0.975
+opacity = 0.93
 startup_mode = "Maximized"
 decorations = "None"
 resize_increments = true
@@ -20,7 +20,7 @@ style = "Regular"
 
 [general]
 import = [
-  "~/.config/alacritty/themes/themes/tokyo_night_storm.toml"
+  "~/.config/alacritty/themes/themes/tender.toml"
 ]
 
 [[keyboard.bindings]]
