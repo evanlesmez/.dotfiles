@@ -200,9 +200,6 @@ bindsym $mod+r mode "resize"
 
 bindsym $mod+Shift+o move workspace to output up 
 
-# Flip dvorak or qwerty
-bindsym $mod+Shift+m exec --no-startup-id sh -c 'setxkbmap -query | grep -q dvorak && setxkbmap us -option "" -option caps:escape || setxkbmap us -variant dvorak -option "" -option caps:escape'
-
 # Start i3bar to display a workspace bar (plus the systkem information i3statusfinds out, if available)
 bar {
     font pango:IoskeleyMonoTerm Nerd Font 11
